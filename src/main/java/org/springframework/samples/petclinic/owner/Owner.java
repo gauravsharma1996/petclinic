@@ -46,14 +46,6 @@ import org.springframework.util.Assert;
 @Table(name = "owners")
 public class Owner extends Person {
 
-	@Column(name = "address")
-	@NotEmpty
-	private String address;
-
-	@Column(name = "city")
-	@NotEmpty
-	private String city;
-
 	@Column(name = "telephone")
 	@NotEmpty
 	@Digits(fraction = 0, integer = 10)
@@ -63,22 +55,6 @@ public class Owner extends Person {
 	@JoinColumn(name = "owner_id")
 	@OrderBy("name")
 	private List<Pet> pets = new ArrayList<>();
-
-	public String getAddress() {
-		return this.address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public String getCity() {
-		return this.city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
 
 	public String getTelephone() {
 		return this.telephone;
@@ -146,8 +122,7 @@ public class Owner extends Person {
 	@Override
 	public String toString() {
 		return new ToStringCreator(this).append("id", this.getId()).append("new", this.isNew())
-				.append("lastName", this.getLastName()).append("firstName", this.getFirstName())
-				.append("address", this.address).append("city", this.city).append("telephone", this.telephone)
+				.append("lastName", this.getLastName()).append("firstName", this.getFirstName()).append("telephone", this.telephone)
 				.toString();
 	}
 

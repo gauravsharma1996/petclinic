@@ -143,10 +143,6 @@ abbr[data-bs-original-title] {
   cursor: help;
   text-decoration-skip-ink: none; }
 
-address {
-  margin-bottom: 1rem;
-  font-style: normal;
-  line-height: inherit; }
 
 ol,
 ul {
